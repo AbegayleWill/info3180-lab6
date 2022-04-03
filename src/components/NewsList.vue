@@ -18,7 +18,7 @@
 
     <div class= "grid">
         <div class="card" style="width: 18rem;" v-for:="article in articles">
-                <img :src= article.urlToImage class="card-img-top" alt="">
+                <img :src= "article.urlToImage" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">{{ article.title }}</h5>
                         <p class="card-text">{{article.description}}</p>
