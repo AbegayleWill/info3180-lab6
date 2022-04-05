@@ -38,6 +38,24 @@ export default {
             searchTerm: ''
         }
     },
+    created() {
+        let self = this;
+        fetch('https://newsapi.org/v2/top-headlines?country=us',
+        {
+            headers: {
+                'Authorization': `Bearer ${import.meta.env.VITE_NEWSAPI_TOKEN}`
+                }
+        })
+        
+        .then(function(response) {
+        return response.json();
+        })
+        .then(function(data) {
+        console.log(data);
+        self.articles = data.articles;
+        });
+    },
+
     methods: {
         searchNews() {
             let self = this;
